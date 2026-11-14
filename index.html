@@ -201,7 +201,7 @@ textarea{min-height:120px;resize:vertical}
 
 <header class="site-head" id="top">
   <div class="wrap head-row">
-    <a class="brand" href="#top" aria-label="D4Goal home">
+    <a class="brand" href="./" aria-label="D4Goal home">
       <img src="assets/d4goal-icon.svg" alt="" width="44" height="31">
       <span>D4Goal</span>
     </a>
@@ -563,6 +563,24 @@ textarea{min-height:120px;resize:vertical}
   var nav = (navigator.language || "en").slice(0,2).toLowerCase();
   start = (q && T[q]) ? q : (saved && T[saved]) ? saved : (T[nav] ? nav : "en");
   if(start !== "en") setLang(start); else { var hl0 = document.querySelector('input[name="language"]'); if(hl0) hl0.value = "en"; }
+
+  // scroll behaviour: reload opens at the top, logo goes to the top,
+  // in-page links scroll without adding #section to the address
+  var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var how = reduceMotion ? "auto" : "smooth";
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  var navEntry = (performance.getEntriesByType && performance.getEntriesByType("navigation")[0]) || null;
+  if (navEntry && navEntry.type === "reload" && location.hash) history.replaceState(null, "", location.pathname + location.search);
+  if (!location.hash) window.scrollTo(0, 0);
+  document.querySelector(".brand").addEventListener("click", function(ev){ ev.preventDefault(); window.scrollTo({top:0, behavior:how}); });
+  document.querySelectorAll('a[href^="#"]:not(.skip)').forEach(function(a){
+    a.addEventListener("click", function(ev){
+      var target = document.getElementById(a.getAttribute("href").slice(1));
+      if (!target) return;
+      ev.preventDefault();
+      target.scrollIntoView({behavior:how, block:"start"});
+    });
+  });
 
   // header border on scroll
   var head = document.querySelector(".site-head");
