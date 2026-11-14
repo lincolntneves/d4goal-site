@@ -573,14 +573,25 @@ textarea{min-height:120px;resize:vertical}
   if (navEntry && navEntry.type === "reload" && location.hash) history.replaceState(null, "", location.pathname + location.search);
   if (!location.hash) window.scrollTo(0, 0);
   document.querySelector(".brand").addEventListener("click", function(ev){ ev.preventDefault(); window.scrollTo({top:0, behavior:how}); });
+  // stop with the section title (or the target itself) just below the sticky header
+  function goTo(target, behavior){
+    var anchor = target.tagName === "SECTION" ? (target.querySelector("h2") || target) : target;
+    var headH = document.querySelector(".site-head").getBoundingClientRect().height;
+    var y = anchor.getBoundingClientRect().top + window.scrollY - headH - 28;
+    window.scrollTo({top: Math.max(0, y), behavior: behavior});
+  }
   document.querySelectorAll('a[href^="#"]:not(.skip)').forEach(function(a){
     a.addEventListener("click", function(ev){
       var target = document.getElementById(a.getAttribute("href").slice(1));
       if (!target) return;
       ev.preventDefault();
-      target.scrollIntoView({behavior:how, block:"start"});
+      goTo(target, how);
     });
   });
+  if (location.hash) {
+    var initial = document.getElementById(location.hash.slice(1));
+    if (initial) window.addEventListener("load", function(){ goTo(initial, "auto"); });
+  }
 
   // header border on scroll
   var head = document.querySelector(".site-head");
