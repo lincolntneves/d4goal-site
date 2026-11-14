@@ -124,13 +124,14 @@ section{scroll-margin-top:80px}
 @media (max-width:760px){.qs li{grid-template-columns:1fr;gap:.6rem}}
 
 /* steps */
-.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;counter-reset:s}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;counter-reset:s}
 .steps li{counter-increment:s;position:relative;padding-top:4.2rem}
 .steps li::before{content:counter(s);position:absolute;top:0;left:0;width:3rem;height:3rem;border-radius:50%;display:grid;place-items:center;font:800 1.35rem/1 var(--display);color:var(--white);background:var(--navy);padding-top:.2rem}
 .steps li::after{content:"";position:absolute;top:1.5rem;left:3.6rem;right:-1.4rem;height:3px;background:var(--line);border-radius:2px}
 .steps li:last-child::after{display:none}
 .steps p{color:var(--muted);margin-top:.5rem}
-@media (max-width:820px){.steps{grid-template-columns:1fr}.steps li::after{display:none}}
+@media (max-width:980px){.steps{grid-template-columns:1fr 1fr}.steps li::after{display:none}}
+@media (max-width:600px){.steps{grid-template-columns:1fr}}
 
 /* tools + principles */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem)}
@@ -143,7 +144,8 @@ section{scroll-margin-top:80px}
 
 /* about */
 .about{display:grid;grid-template-columns:auto 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:start}
-.monogram{width:clamp(110px,14vw,160px);aspect-ratio:1;border-radius:50%;background:var(--navy);color:var(--white);display:grid;place-items:center;font:800 clamp(2.4rem,4vw,3.4rem)/1 var(--display);padding-top:.3rem}
+.monogram{width:clamp(110px,14vw,160px);aspect-ratio:1;border-radius:50%;background:var(--mist);color:var(--white);display:grid;place-items:center;font:800 clamp(2.4rem,4vw,3.4rem)/1 var(--display);padding-top:.3rem}
+.monogram img{width:60%;height:auto}
 .about p{color:var(--muted);max-width:64ch;margin-top:1rem}
 .creds{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-top:1.3rem;padding:0;list-style:none;font-weight:600;color:var(--navy);font-size:.97rem}
 @media (max-width:640px){.about{grid-template-columns:1fr}}
@@ -204,7 +206,7 @@ textarea{min-height:120px;resize:vertical}
       <span>D4Goal</span>
     </a>
     <nav class="nav" aria-label="Main">
-      <a class="link" href="#what" data-i18n="nav.what">What we solve</a>
+      <a class="link" href="#what" data-i18n="nav.what">What we do</a>
       <a class="link" href="#how" data-i18n="nav.how">How it works</a>
       <a class="link" href="#about" data-i18n="nav.about">About</a>
       <div class="lang" role="group" aria-label="Language">
@@ -222,10 +224,10 @@ textarea{min-height:120px;resize:vertical}
     <div class="wrap hero-grid">
       <div>
         <h1 data-i18n="hero.title">Put your business data to work for your goals.</h1>
-        <p class="lede" data-i18n="hero.lede">D4Goal (Data for Goal) builds forecasts, dashboards and AI assistants for small and mid-sized businesses in South Florida. Monthly plans, designed by a statistician, in English, Spanish or Portuguese.</p>
+        <p class="lede" data-i18n="hero.lede">D4Goal (Data for Goal) goes into the data of small and mid-sized businesses in South Florida, finds what the owner really needs to know, and delivers a ready-to-use solution built for that business. Monthly plans, designed by a statistician, in English, Spanish or Portuguese.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Book a free data check</a>
-          <a class="btn btn-ghost" href="#what" data-i18n="hero.cta2">See what we solve</a>
+          <a class="btn btn-ghost" href="#what" data-i18n="hero.cta2">See how it works</a>
         </div>
         <p class="area" data-i18n="hero.area">Serving Miami-Dade, Broward and Palm Beach. Remote across the U.S.</p>
       </div>
@@ -283,8 +285,23 @@ textarea{min-height:120px;resize:vertical}
   <section id="what" class="band-white sec">
     <div class="wrap">
       <div class="sec-head">
-        <h2 data-i18n="what.title">Questions your data can already answer</h2>
-        <p class="lede" data-i18n="what.lede">Most businesses already have the numbers, spread across the POS, bookkeeping and spreadsheets. We turn them into answers you can act on each week.</p>
+        <h2 data-i18n="what.title">We learn your business through its data, then build what you need</h2>
+        <p class="lede" data-i18n="what.lede">Every business runs on different numbers. We study yours, such as sales, costs, customers and schedules, find what you need to see and decide, and deliver it ready to use, in the format that fits how you work.</p>
+      </div>
+      <ol class="steps" id="how">
+        <li><h3 data-i18n="s1.t">Free data check</h3><p data-i18n="s1.d">A 30-minute call. We look at what you already use, such as QuickBooks, Square or spreadsheets, and choose one decision worth improving first.</p></li>
+        <li><h3 data-i18n="s2.t">We study your data and routine</h3><p data-i18n="s2.d">We connect your sources, clean the data and talk with you and your managers to find the few decisions that move results.</p></li>
+        <li><h3 data-i18n="s3.t">We build your solution</h3><p data-i18n="s3.d">A dashboard, a forecast, alerts, an automation or an AI assistant, made for your business and delivered ready to use. You judge it with your real numbers.</p></li>
+        <li><h3 data-i18n="s4.t">We keep it working</h3><p data-i18n="s4.d">On a monthly plan we keep the data and models updated, track accuracy and add the next improvement. No long-term contract.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="examples" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 data-i18n="ex.title">Common starting points</h2>
+        <p class="lede" data-i18n="ex.lede">Each solution is built for one business. These are questions owners often have, and the kind of solution we build to answer them.</p>
       </div>
       <ul class="qs">
         <li>
@@ -315,25 +332,11 @@ textarea{min-height:120px;resize:vertical}
     </div>
   </section>
 
-  <section id="how" class="sec">
-    <div class="wrap">
-      <div class="sec-head">
-        <h2 data-i18n="how.title">How it works</h2>
-        <p class="lede" data-i18n="how.lede">You see results on your own numbers before you commit to a monthly plan.</p>
-      </div>
-      <ol class="steps">
-        <li><h3 data-i18n="s1.t">Free data check</h3><p data-i18n="s1.d">A 30-minute call. We look at what you already use, such as QuickBooks, Square or spreadsheets, and choose one decision worth improving first.</p></li>
-        <li><h3 data-i18n="s2.t">First version on your data</h3><p data-i18n="s2.d">We connect your data, clean it and deliver the first forecast or dashboard. You judge it with your real numbers.</p></li>
-        <li><h3 data-i18n="s3.t">Monthly plan</h3><p data-i18n="s3.d">We keep the models updated, track their accuracy and add the next improvement. No long-term contract.</p></li>
-      </ol>
-    </div>
-  </section>
-
   <section class="band-white sec">
     <div class="wrap split">
       <div>
         <h2 data-i18n="tools.title">Works with the tools you already use</h2>
-        <p class="lede" style="margin-top:1rem" data-i18n="tools.lede">No new software to learn. You get a link to your dashboard and alerts by email.</p>
+        <p class="lede" style="margin-top:1rem" data-i18n="tools.lede">No new software to learn. Your solution comes in the format that fits: a private dashboard link, reports and alerts by email, or tools inside what you already use.</p>
         <ul class="tools">
           <li>QuickBooks</li><li>Square</li><li>Shopify</li><li>Clover</li><li>Toast</li><li>Stripe</li><li>Google Sheets</li><li>Excel</li><li data-i18n="tools.csv">CSV exports</li>
         </ul>
@@ -341,18 +344,18 @@ textarea{min-height:120px;resize:vertical}
       <ul class="principles">
         <li><h3 data-i18n="p1.t">Statistics, not guesswork</h3><p data-i18n="p1.d">Models are tested on your past data before you rely on them, and every number shows how sure we are about it.</p></li>
         <li><h3 data-i18n="p2.t">Your data stays yours</h3><p data-i18n="p2.d">We ask for read-only access whenever possible, use your data only for your project, never sell it, and delete it when you leave.</p></li>
-        <li><h3 data-i18n="p3.t">Built for small teams</h3><p data-i18n="p3.d">Plain language, a monthly price you know up front, and one person who knows your business answering your questions.</p></li>
+        <li><h3 data-i18n="p3.t">Built for small teams</h3><p data-i18n="p3.d">Plain language, a monthly price you know up front, and a team that knows your business answering your questions.</p></li>
       </ul>
     </div>
   </section>
 
   <section id="about" class="sec">
     <div class="wrap about">
-      <div class="monogram" aria-hidden="true">LN</div>
+      <div class="monogram" aria-hidden="true"><img src="assets/d4goal-icon.svg" alt="" width="96" height="68"></div>
       <div>
-        <h2 data-i18n="about.title">Who is behind D4Goal</h2>
-        <p data-i18n="about.p1">D4Goal was founded by Lincoln Neves, a statistician and data scientist with more than ten years of experience building predictive models, customer segmentation and churn prediction for telecom, healthcare, media and energy companies, including projects at Accenture and Oi.</p>
-        <p data-i18n="about.p2">He is also a partner at Datawise, a data and machine learning firm in Brazil, and now brings the same methods to South Florida businesses at a size and price that fit them.</p>
+        <h2 data-i18n="about.title">About D4Goal</h2>
+        <p data-i18n="about.p1">D4Goal was founded by Lincoln Neves, a statistician and data scientist with more than ten years of experience in predictive models, customer segmentation and churn prediction for telecom, healthcare, media and energy companies, including projects at Accenture and Oi.</p>
+        <p data-i18n="about.p2">Our team brings the methods of large companies to small and mid-sized businesses, at a size and price that fit them: statistics to measure, machine learning to predict and AI to automate.</p>
         <ul class="creds">
           <li data-i18n="about.c1">B.S. in Statistics, UERJ</li>
           <li data-i18n="about.c2">MBA in Data Science, USP</li>
@@ -366,6 +369,7 @@ textarea{min-height:120px;resize:vertical}
     <div class="wrap">
       <div class="sec-head"><h2 data-i18n="faq.title">Common questions</h2></div>
       <div class="faq">
+        <details><summary data-i18n="f6.q">What exactly do I receive?</summary><p data-i18n="f6.a">A solution built for your business, in the format that fits how you work: a private dashboard, weekly reports, alerts by email, an automation inside the tools you already use or an AI assistant. We define it together after the free data check.</p></details>
         <details><summary data-i18n="f1.q">My data is messy and lives in spreadsheets. Is that a problem?</summary><p data-i18n="f1.a">No. That is where most small businesses start. Organizing and cleaning the data is part of the first step, and we tell you which gaps matter and which do not.</p></details>
         <details><summary data-i18n="f2.q">How much does it cost?</summary><p data-i18n="f2.a">Plans are monthly and depend on how many data sources and models you need. After the free data check you receive a fixed monthly quote in writing, before any work starts.</p></details>
         <details><summary data-i18n="f3.q">Is my data safe?</summary><p data-i18n="f3.a">We request read-only access whenever the tool allows it, store data only for your project, never sell or share it, and delete it at the end of the engagement. We are glad to sign an NDA.</p></details>
@@ -379,7 +383,7 @@ textarea{min-height:120px;resize:vertical}
     <div class="wrap contact-grid">
       <div>
         <h2 data-i18n="c.title">Book your free data check</h2>
-        <p class="lede" style="margin-top:1rem" data-i18n="c.lede">Tell us a little about your business and the decision you want to get right. Lincoln will reply within one business day to set up a 30-minute call.</p>
+        <p class="lede" style="margin-top:1rem" data-i18n="c.lede">Tell us a little about your business and the decision you want to get right. Our team will reply within one business day to set up a 30-minute call.</p>
         <div class="direct">
           <span data-i18n="c.direct">Prefer email?</span>
           <a href="mailto:contact@d4goal.com" class="mail">contact@d4goal.com</a>
@@ -444,31 +448,31 @@ textarea{min-height:120px;resize:vertical}
 
   var T = {
     es: {
-      "skip":"Ir al contenido","nav.what":"Qué resolvemos","nav.how":"Cómo funciona","nav.about":"Quiénes somos","nav.cta":"Diagnóstico gratis",
+      "skip":"Ir al contenido","nav.what":"Qué hacemos","nav.how":"Cómo funciona","nav.about":"Quiénes somos","nav.cta":"Diagnóstico gratis",
       "hero.title":"Ponga los datos de su negocio a trabajar por sus metas.",
-      "hero.lede":"D4Goal (Data for Goal) crea pronósticos, tableros y asistentes de IA para pequeñas y medianas empresas del sur de Florida. Planes mensuales, diseñados por un estadístico, en inglés, español o portugués.",
-      "hero.cta1":"Agendar diagnóstico gratis","hero.cta2":"Ver qué resolvemos","hero.area":"Atendemos Miami-Dade, Broward y Palm Beach. A distancia en todo EE. UU.",
+      "hero.lede":"D4Goal (Data for Goal) entra en los datos de pequeñas y medianas empresas del sur de Florida, descubre lo que el dueño realmente necesita saber y entrega una solución lista para usar, hecha para ese negocio. Planes mensuales, diseñados por un estadístico, en inglés, español o portugués.",
+      "hero.cta1":"Agendar diagnóstico gratis","hero.cta2":"Ver cómo funciona","hero.area":"Atendemos Miami-Dade, Broward y Palm Beach. A distancia en todo EE. UU.",
       "chart.title":"Ejemplo: ventas semanales y pronóstico de 4 semanas","chart.desc":"Gráfico de líneas de ventas semanales pasadas que continúa como pronóstico con un rango sombreado y alcanza la meta en cuatro semanas.",
       "chart.goal":"Meta de ventas","chart.today":"Hoy","chart.actual":"Real","chart.forecast":"Pronóstico",
       "chart.note":"El área sombreada muestra el rango probable. Cada pronóstico viene con la precisión que tuvo en su propio historial.",
-      "what.title":"Preguntas que sus datos ya pueden responder","what.lede":"La mayoría de los negocios ya tiene los números, repartidos entre el punto de venta, la contabilidad y hojas de cálculo. Los convertimos en respuestas para actuar cada semana.",
+      "what.title":"Conocemos su negocio a través de sus datos y construimos lo que necesita","what.lede":"Cada negocio funciona con números distintos. Estudiamos los suyos, como ventas, costos, clientes y horarios, encontramos lo que necesita ver y decidir, y lo entregamos listo para usar, en el formato que se adapta a su forma de trabajar.",
       "q1.q":"“¿Tendré suficiente efectivo dentro de ocho semanas?”","q1.t":"Pronóstico de flujo de caja","q1.d":"Una proyección de 13 semanas con sus datos bancarios, ventas y cuentas por pagar, actualizada cada semana, con una alerta antes de que falte dinero.",
       "q2.q":"“¿Qué clientes dejaron de volver y quién es el próximo?”","q2.t":"Inteligencia de clientes","q2.d":"Grupos de clientes por valor y hábitos de compra, más una lista de clientes en riesgo de irse para que su equipo los contacte a tiempo.",
       "q3.q":"“¿Cuánto debo comprar y cuánto personal necesito el próximo mes?”","q3.t":"Pronóstico de demanda","q3.d":"Ventas esperadas por producto, local y día de la semana, considerando feriados y temporada, para comprar y programar turnos con menos desperdicio.",
       "q4.q":"“¿Por dónde se me escapa el margen?”","q4.t":"Tablero de rentabilidad e indicadores","q4.d":"Una sola página con los pocos números que importan para su negocio, actualizada automáticamente, con un aviso cuando algo sale de lo normal.",
       "q5.q":"“¿Puede la IA encargarse de prospectos y papeleo?”","q5.t":"Asistentes de IA y automatización","q5.d":"Asistentes que responden preguntas frecuentes de clientes, pasan facturas y recibos a su hoja de cálculo y redactan respuestas a reseñas, siempre con una persona al mando.",
       "q6.q":"“¿Cómo empieza mi equipo a usar la IA de forma correcta?”","q6.t":"Capacitación práctica en IA","q6.d":"Talleres prácticos para dueños y empleados, con sus propios procesos como ejemplo, en inglés, español o portugués.",
-      "how.title":"Cómo funciona","how.lede":"Usted ve resultados con sus propios números antes de contratar un plan mensual.",
+      
       "s1.t":"Diagnóstico de datos gratis","s1.d":"Una llamada de 30 minutos. Revisamos lo que ya usa, como QuickBooks, Square u hojas de cálculo, y elegimos una decisión para mejorar primero.",
-      "s2.t":"Primera versión con sus datos","s2.d":"Conectamos y limpiamos sus datos y entregamos el primer pronóstico o tablero. Usted lo evalúa con sus números reales.",
-      "s3.t":"Plan mensual","s3.d":"Mantenemos los modelos actualizados, medimos su precisión y agregamos la siguiente mejora. Sin contrato de largo plazo.",
-      "tools.title":"Funciona con las herramientas que ya usa","tools.lede":"Ningún software nuevo que aprender. Recibe un enlace a su tablero y alertas por correo.","tools.csv":"Exportaciones CSV",
+      "s2.t":"Estudiamos sus datos y su rutina","s2.d":"Conectamos sus fuentes, limpiamos los datos y conversamos con usted y sus gerentes para encontrar las pocas decisiones que mueven los resultados.",
+      "s3.t":"Construimos su solución","s3.d":"Un tablero, un pronóstico, alertas, una automatización o un asistente de IA, hecho para su negocio y entregado listo para usar. Usted lo evalúa con sus números reales.",
+      "s4.t":"Lo mantenemos funcionando","s4.d":"Con un plan mensual mantenemos los datos y modelos actualizados, medimos la precisión y agregamos la siguiente mejora. Sin contrato de largo plazo.","ex.title":"Puntos de partida comunes","ex.lede":"Cada solución se construye para un negocio. Estas son preguntas que los dueños suelen tener y el tipo de solución que construimos para responderlas.","f6.q":"¿Qué recibo exactamente?","f6.a":"Una solución hecha para su negocio, en el formato que se adapta a su forma de trabajar: un tablero privado, informes semanales, alertas por correo, una automatización dentro de las herramientas que ya usa o un asistente de IA. Lo definimos juntos después del diagnóstico gratis.","tools.title":"Funciona con las herramientas que ya usa","tools.lede":"Ningún software nuevo que aprender. Su solución llega en el formato que mejor le sirve: un enlace a un tablero privado, informes y alertas por correo o herramientas dentro de lo que ya usa.","tools.csv":"Exportaciones CSV",
       "p1.t":"Estadística, no intuición","p1.d":"Los modelos se prueban con sus datos históricos antes de que usted dependa de ellos, y cada número muestra qué tan seguros estamos.",
       "p2.t":"Sus datos siguen siendo suyos","p2.d":"Pedimos acceso de solo lectura siempre que es posible, usamos sus datos solo para su proyecto, nunca los vendemos y los borramos cuando usted se va.",
-      "p3.t":"Hecho para equipos pequeños","p3.d":"Lenguaje claro, un precio mensual conocido de antemano y una persona que conoce su negocio respondiendo sus preguntas.",
-      "about.title":"Quién está detrás de D4Goal",
+      "p3.t":"Hecho para equipos pequeños","p3.d":"Lenguaje claro, un precio mensual conocido de antemano y un equipo que conoce su negocio respondiendo sus preguntas.",
+      "about.title":"Sobre D4Goal",
       "about.p1":"D4Goal fue fundada por Lincoln Neves, estadístico y científico de datos con más de diez años de experiencia en modelos predictivos, segmentación de clientes y predicción de abandono para empresas de telecomunicaciones, salud, medios y energía, incluidos proyectos en Accenture y Oi.",
-      "about.p2":"También es socio de Datawise, empresa de datos y machine learning en Brasil, y ahora trae los mismos métodos a los negocios del sur de Florida, con un tamaño y precio a su medida.",
+      "about.p2":"Nuestro equipo lleva los métodos de las grandes empresas a pequeños y medianos negocios, con un tamaño y precio a su medida: estadística para medir, machine learning para predecir e IA para automatizar.",
       "about.c1":"Licenciatura en Estadística, UERJ","about.c2":"MBA en Ciencia de Datos, USP","about.c3":"MBA en Marketing, PUC-Rio",
       "faq.title":"Preguntas frecuentes",
       "f1.q":"Mis datos están desordenados y en hojas de cálculo. ¿Es un problema?","f1.a":"No. Así empieza la mayoría de los pequeños negocios. Organizar y limpiar los datos es parte del primer paso, y le decimos qué vacíos importan y cuáles no.",
@@ -476,40 +480,40 @@ textarea{min-height:120px;resize:vertical}
       "f3.q":"¿Mis datos están seguros?","f3.a":"Pedimos acceso de solo lectura cuando la herramienta lo permite, guardamos los datos solo para su proyecto, nunca los vendemos ni compartimos y los borramos al terminar. Con gusto firmamos un acuerdo de confidencialidad.",
       "f4.q":"¿Con qué tipos de negocio trabajan?","f4.a":"Restaurantes y cafeterías, comercio y e-commerce, clínicas, construcción y servicios para el hogar, bienes raíces y servicios profesionales. Si vende a clientes y lleva registros, casi siempre hay algo útil que encontrar.",
       "f5.q":"¿Solo trabajan en el sur de Florida?","f5.a":"Nos enfocamos en Miami-Dade, Broward y Palm Beach para reunirnos en persona, pero todo el trabajo puede hacerse a distancia en cualquier lugar de EE. UU.",
-      "c.title":"Agende su diagnóstico de datos gratis","c.lede":"Cuéntenos un poco sobre su negocio y la decisión que quiere acertar. Lincoln responderá en un día hábil para agendar una llamada de 30 minutos.","c.direct":"¿Prefiere correo?",
+      "c.title":"Agende su diagnóstico de datos gratis","c.lede":"Cuéntenos un poco sobre su negocio y la decisión que quiere acertar. Nuestro equipo responderá en un día hábil para agendar una llamada de 30 minutos.","c.direct":"¿Prefiere correo?",
       "form.name":"Su nombre","form.email":"Correo electrónico","form.company":"Nombre del negocio","form.phone":"Teléfono o WhatsApp","form.optional":"(opcional)","form.industry":"Sector","form.size":"Tamaño del equipo",
       "ind.0":"Elija uno","ind.1":"Restaurante o alimentos","ind.2":"Comercio o e-commerce","ind.3":"Salud o clínica","ind.4":"Construcción o servicios para el hogar","ind.5":"Bienes raíces","ind.6":"Servicios profesionales","ind.7":"Otro",
       "form.msg":"¿Qué le gustaría saber o mejorar?","form.msgph":"Por ejemplo: quiero saber si tendré efectivo suficiente para el verano, o qué productos dejar de comprar.",
       "form.privacy":"Usamos sus datos solo para responderle.","form.privacyLink":"Política de privacidad","form.submit":"Solicitar mi diagnóstico gratis",
-      "form.sending":"Enviando…","form.ok":"Recibimos su mensaje. Lincoln le responderá en un día hábil.","form.err":"El mensaje no se envió. Escríbanos a ","form.invalid":"Complete los campos marcados para continuar.","form.mailto":"Se abrió su aplicación de correo con el mensaje listo. Solo tiene que enviarlo.",
+      "form.sending":"Enviando…","form.ok":"Recibimos su mensaje. Nuestro equipo le responderá en un día hábil.","form.err":"El mensaje no se envió. Escríbanos a ","form.invalid":"Complete los campos marcados para continuar.","form.mailto":"Se abrió su aplicación de correo con el mensaje listo. Solo tiene que enviarlo.",
       "foot.loc":"Sur de Florida, EE. UU."
     },
     pt: {
-      "skip":"Ir para o conteúdo","nav.what":"O que resolvemos","nav.how":"Como funciona","nav.about":"Quem somos","nav.cta":"Diagnóstico grátis",
+      "skip":"Ir para o conteúdo","nav.what":"O que fazemos","nav.how":"Como funciona","nav.about":"Quem somos","nav.cta":"Diagnóstico grátis",
       "hero.title":"Coloque os dados do seu negócio para trabalhar pelas suas metas.",
-      "hero.lede":"A D4Goal (Data for Goal) cria previsões, painéis e assistentes de IA para pequenas e médias empresas do sul da Flórida. Planos mensais, desenhados por um estatístico, em inglês, espanhol ou português.",
-      "hero.cta1":"Agendar diagnóstico grátis","hero.cta2":"Ver o que resolvemos","hero.area":"Atendemos Miami-Dade, Broward e Palm Beach. A distância em todos os EUA.",
+      "hero.lede":"A D4Goal (Data for Goal) entra nos dados de pequenas e médias empresas do sul da Flórida, descobre o que o dono realmente precisa saber e entrega uma solução pronta para usar, feita para aquele negócio. Planos mensais, desenhados por um estatístico, em inglês, espanhol ou português.",
+      "hero.cta1":"Agendar diagnóstico grátis","hero.cta2":"Ver como funciona","hero.area":"Atendemos Miami-Dade, Broward e Palm Beach. A distância em todos os EUA.",
       "chart.title":"Exemplo: vendas semanais e previsão de 4 semanas","chart.desc":"Gráfico de linhas das vendas semanais passadas que continua como previsão com uma faixa sombreada e atinge a meta em quatro semanas.",
       "chart.goal":"Meta de vendas","chart.today":"Hoje","chart.actual":"Real","chart.forecast":"Previsão",
       "chart.note":"A área sombreada mostra a faixa provável. Toda previsão vem com a precisão que teve no seu próprio histórico.",
-      "what.title":"Perguntas que seus dados já conseguem responder","what.lede":"A maioria dos negócios já tem os números, espalhados entre o PDV, a contabilidade e planilhas. Nós os transformamos em respostas para agir toda semana.",
+      "what.title":"Conhecemos o seu negócio pelos dados e construímos o que você precisa","what.lede":"Cada negócio funciona com números diferentes. Estudamos os seus, como vendas, custos, clientes e escalas, encontramos o que você precisa ver e decidir, e entregamos pronto para usar, no formato que combina com o seu jeito de trabalhar.",
       "q1.q":"“Vou ter caixa suficiente daqui a oito semanas?”","q1.t":"Previsão de fluxo de caixa","q1.d":"Uma projeção de 13 semanas a partir do seu banco, vendas e contas a pagar, atualizada toda semana, com um alerta antes de faltar dinheiro.",
       "q2.q":"“Quais clientes pararam de voltar, e quem é o próximo?”","q2.t":"Inteligência de clientes","q2.d":"Grupos de clientes por valor e hábito de compra, mais uma lista de clientes com risco de sair para sua equipe agir a tempo.",
       "q3.q":"“Quanto devo comprar e quantas pessoas escalar no próximo mês?”","q3.t":"Previsão de demanda","q3.d":"Vendas esperadas por produto, loja e dia da semana, considerando feriados e sazonalidade, para comprar e escalar com menos desperdício.",
       "q4.q":"“Por onde a minha margem está escapando?”","q4.t":"Painel de lucro e indicadores","q4.d":"Uma página com os poucos números que importam para o seu negócio, atualizada automaticamente, com um aviso quando algo sai do normal.",
       "q5.q":"“A IA pode cuidar de contatos e papelada por nós?”","q5.t":"Assistentes de IA e automação","q5.d":"Assistentes que respondem dúvidas comuns de clientes, passam notas e recibos para a sua planilha e redigem respostas a avaliações, sempre com uma pessoa no controle.",
       "q6.q":"“Como minha equipe começa a usar IA do jeito certo?”","q6.t":"Treinamento prático em IA","q6.d":"Oficinas práticas para donos e funcionários, usando os seus próprios processos como exemplo, em inglês, espanhol ou português.",
-      "how.title":"Como funciona","how.lede":"Você vê resultado nos seus próprios números antes de assinar um plano mensal.",
+      
       "s1.t":"Diagnóstico de dados grátis","s1.d":"Uma conversa de 30 minutos. Olhamos o que você já usa, como QuickBooks, Square ou planilhas, e escolhemos uma decisão para melhorar primeiro.",
-      "s2.t":"Primeira versão com seus dados","s2.d":"Conectamos e limpamos seus dados e entregamos a primeira previsão ou painel. Você avalia com os seus números reais.",
-      "s3.t":"Plano mensal","s3.d":"Mantemos os modelos atualizados, acompanhamos a precisão e adicionamos a próxima melhoria. Sem contrato de longo prazo.",
-      "tools.title":"Funciona com as ferramentas que você já usa","tools.lede":"Nenhum software novo para aprender. Você recebe um link para o seu painel e alertas por e-mail.","tools.csv":"Exportações CSV",
+      "s2.t":"Estudamos seus dados e sua rotina","s2.d":"Conectamos suas fontes, limpamos os dados e conversamos com você e seus gerentes para encontrar as poucas decisões que mexem no resultado.",
+      "s3.t":"Construímos a sua solução","s3.d":"Um painel, uma previsão, alertas, uma automação ou um assistente de IA, feito para o seu negócio e entregue pronto para usar. Você avalia com os seus números reais.",
+      "s4.t":"Mantemos funcionando","s4.d":"No plano mensal mantemos os dados e modelos atualizados, acompanhamos a precisão e adicionamos a próxima melhoria. Sem contrato de longo prazo.","ex.title":"Pontos de partida comuns","ex.lede":"Cada solução é construída para um negócio. Estas são perguntas que os donos costumam ter e o tipo de solução que construímos para respondê-las.","f6.q":"O que eu recebo, exatamente?","f6.a":"Uma solução feita para o seu negócio, no formato que combina com o seu jeito de trabalhar: um painel privado, relatórios semanais, alertas por e-mail, uma automação dentro das ferramentas que você já usa ou um assistente de IA. Definimos juntos depois do diagnóstico grátis.","tools.title":"Funciona com as ferramentas que você já usa","tools.lede":"Nenhum software novo para aprender. Sua solução chega no formato que funciona para você: um link para um painel privado, relatórios e alertas por e-mail ou ferramentas dentro do que você já usa.","tools.csv":"Exportações CSV",
       "p1.t":"Estatística, não achismo","p1.d":"Os modelos são testados no seu histórico antes de você depender deles, e cada número mostra o quanto temos certeza dele.",
       "p2.t":"Seus dados continuam seus","p2.d":"Pedimos acesso somente leitura sempre que possível, usamos seus dados só no seu projeto, nunca vendemos e apagamos quando você sai.",
-      "p3.t":"Feito para equipes pequenas","p3.d":"Linguagem simples, um preço mensal conhecido de antemão e uma pessoa que conhece o seu negócio respondendo suas dúvidas.",
-      "about.title":"Quem está por trás da D4Goal",
+      "p3.t":"Feito para equipes pequenas","p3.d":"Linguagem simples, um preço mensal conhecido de antemão e uma equipe que conhece o seu negócio respondendo suas dúvidas.",
+      "about.title":"Sobre a D4Goal",
       "about.p1":"A D4Goal foi fundada por Lincoln Neves, estatístico e cientista de dados com mais de dez anos de experiência em modelos preditivos, segmentação de clientes e previsão de churn para empresas de telecomunicações, saúde, mídia e energia, incluindo projetos na Accenture e na Oi.",
-      "about.p2":"Ele também é sócio da Datawise, empresa de dados e machine learning no Brasil, e agora leva os mesmos métodos aos negócios do sul da Flórida, num tamanho e preço que cabem neles.",
+      "about.p2":"Nossa equipe leva os métodos das grandes empresas para pequenos e médios negócios, num tamanho e preço que cabem neles: estatística para medir, machine learning para prever e IA para automatizar.",
       "about.c1":"Bacharel em Estatística, UERJ","about.c2":"MBA em Data Science, USP","about.c3":"MBA em Marketing, PUC-Rio",
       "faq.title":"Perguntas frequentes",
       "f1.q":"Meus dados estão bagunçados e em planilhas. Isso é um problema?","f1.a":"Não. É assim que a maioria dos pequenos negócios começa. Organizar e limpar os dados faz parte do primeiro passo, e dizemos quais lacunas importam e quais não.",
@@ -517,16 +521,16 @@ textarea{min-height:120px;resize:vertical}
       "f3.q":"Meus dados estão seguros?","f3.a":"Pedimos acesso somente leitura quando a ferramenta permite, guardamos os dados só para o seu projeto, nunca vendemos nem compartilhamos e apagamos ao final. Assinamos um acordo de confidencialidade com prazer.",
       "f4.q":"Com que tipos de negócio vocês trabalham?","f4.a":"Restaurantes e cafés, varejo e e-commerce, clínicas, construção e serviços residenciais, imobiliárias e serviços profissionais. Se você vende para clientes e guarda registros, quase sempre há algo útil a descobrir.",
       "f5.q":"Vocês só atendem no sul da Flórida?","f5.a":"Focamos em Miami-Dade, Broward e Palm Beach para encontrar você pessoalmente, mas todo o trabalho pode ser feito a distância em qualquer lugar dos EUA.",
-      "c.title":"Agende seu diagnóstico de dados grátis","c.lede":"Conte um pouco sobre o seu negócio e a decisão que você quer acertar. Lincoln responde em até um dia útil para marcar uma conversa de 30 minutos.","c.direct":"Prefere e-mail?",
+      "c.title":"Agende seu diagnóstico de dados grátis","c.lede":"Conte um pouco sobre o seu negócio e a decisão que você quer acertar. Nossa equipe responde em até um dia útil para marcar uma conversa de 30 minutos.","c.direct":"Prefere e-mail?",
       "form.name":"Seu nome","form.email":"E-mail","form.company":"Nome da empresa","form.phone":"Telefone ou WhatsApp","form.optional":"(opcional)","form.industry":"Setor","form.size":"Tamanho da equipe",
       "ind.0":"Escolha um","ind.1":"Restaurante ou alimentação","ind.2":"Varejo ou e-commerce","ind.3":"Saúde ou clínica","ind.4":"Construção ou serviços residenciais","ind.5":"Imobiliário","ind.6":"Serviços profissionais","ind.7":"Outro",
       "form.msg":"O que você gostaria de saber ou melhorar?","form.msgph":"Por exemplo: quero saber se vou ter caixa para o verão, ou quais produtos parar de comprar.",
       "form.privacy":"Usamos seus dados apenas para responder você.","form.privacyLink":"Política de privacidade","form.submit":"Pedir meu diagnóstico grátis",
-      "form.sending":"Enviando…","form.ok":"Recebemos sua mensagem. Lincoln responde em até um dia útil.","form.err":"A mensagem não foi enviada. Escreva para ","form.invalid":"Preencha os campos marcados para continuar.","form.mailto":"Seu aplicativo de e-mail abriu com a mensagem pronta. É só enviar.",
+      "form.sending":"Enviando…","form.ok":"Recebemos sua mensagem. Nossa equipe responde em até um dia útil.","form.err":"A mensagem não foi enviada. Escreva para ","form.invalid":"Preencha os campos marcados para continuar.","form.mailto":"Seu aplicativo de e-mail abriu com a mensagem pronta. É só enviar.",
       "foot.loc":"Sul da Flórida, EUA."
     },
     en: {
-      "form.sending":"Sending…","form.ok":"We got your message. Lincoln will reply within one business day.","form.err":"The message didn't go through. Email us at ","form.invalid":"Fill in the highlighted fields to continue.","form.mailto":"Your email app opened with the message ready. Just press send."
+      "form.sending":"Sending…","form.ok":"We got your message. Our team will reply within one business day.","form.err":"The message didn't go through. Email us at ","form.invalid":"Fill in the highlighted fields to continue.","form.mailto":"Your email app opened with the message ready. Just press send."
     }
   };
 
